@@ -1,1 +1,0 @@
-* TODO Se mettre d'accord si on utilise la classe report ou article
