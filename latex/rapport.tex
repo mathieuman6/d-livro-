@@ -67,13 +67,30 @@ facturation de type ERP afin de générer toutes les factures de l'entreprise su
 la même interface ERP. Il faudra donc un type de facture spécifique pour les
 clients de la plateforme e-commerce.
 
+\chapter{La mise en ligne}
+\section{L'hébergement}
+Notre site doit être accessible sur internet pour qu'on puisse travailler dessus
+à distance et chacun de notre coté sans empêcher le travail d'un autre et aussi
+pour que les clients puissent naviguer sur notre site. /br
+Il nous faudra aussi acheter le nom de domaine https://www.delivrou.fr, il nous faudra
+aussi faire le certificat ssl avec let's encrypt.
+
+\section{Le système de payement}
+Nous devons avoir plusieurs système avec plusieurs solution par exemple par chèque ou par
+carte banquière. Pour ce faite nous devons prendre des informations personnels grâce à un
+formulaire.
+
+\section{Le système de livraison}
+Nous devons proposer 2 systèmes de retrait de colis (livraison ou retrait en magasin), pour
+cette parti il faudra aussi un formulaire pour demander les adresses.
+
 \chapter{Conclusion}
-Plusieur critaires devrons être respectés pour le choix de la technologie du
+Plusieurs critères devrons être respectés pour le choix de la technologie du
 site.
 Il faut que les livres puissent disposer d'un nom, d'une description, d'une
 date de parution d'un auteur (ou groupe d'auteur), un éditeur et d'un prix.
 De plus la plateforme doit pouvoir donner la possibilité d'avoir des
-réductions pour les clients réguliés ainsi que des reductions ponctuelles sur
+réductions pour les clients réguliers ainsi que des réductions ponctuelles sur
 des produits cibles.
 
 Il faut pouvoir synchroniser le site de e-commerce avec un système de gestion
@@ -227,7 +244,9 @@ Nous avons décidé d’héberger notre site car nous voulions pouvoir tous
 le modifier à distance. Mr Pierre-Antoine Rouby dispose d'un serveur
 sur lequel nous allons installer notre Prestashop de test. Nous devons
 donc mettre en place un virtual host apache ainsi qu'une base de données
-mariaDB.
+mariaDB. /br
+Pour le nom de domaine (delivrou.fr) nous pensons l'acheter sur ovh ou
+le .fr est à 5,49€.
 
 \section{L'installation de prestashop}
 Nous avons choisi d'installer prestashop sur un server apache mutualisé,
