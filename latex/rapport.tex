@@ -67,13 +67,37 @@ facturation de type ERP afin de générer toutes les factures de l'entreprise su
 la même interface ERP. Il faudra donc un type de facture spécifique pour les
 clients de la plateforme e-commerce.
 
+\chapter{La mise en ligne}
+\section{L'hébergement}
+Notre site doit être accessible sur internet pour qu'on puisse travailler dessus
+à distance et chacun de notre coté sans empêcher le travail d'un autre et aussi
+pour que les clients puissent naviguer sur notre site. /br
+Il nous faudra aussi acheter le nom de domaine https://www.delivrou.fr, il nous faudra
+aussi faire le certificat ssl avec let's encrypt.
+
+\section{Le système de payement}
+Nous devons avoir plusieurs système avec plusieurs solution par exemple par chèque ou par
+carte banquière. Pour ce faite nous devons prendre des informations personnels grâce à un
+formulaire.
+
+\section{Le système de livraison}
+Nous devons proposer 2 systèmes de retrait de colis (livraison ou retrait en magasin), pour
+cette parti il faudra aussi un formulaire pour demander les adresses.
+
+\chapter{Après la mise en ligne}
+\section{La maintenance}
+Apres la mise en ligne il faudra toujours alimenter le site avec de nouveaux articles
+et continuer tout le travail "marketing" mettre les articles en valeur, les newsletters etc ...
+Mais aussi le serveur et la base de donné, il faudra donc rémunérer un administrateur pour qu'il
+s'occupe de tout cela. Il faudra aussi penser a renouveler le nom de domaine.
+
 \chapter{Conclusion}
-Plusieur critaires devrons être respectés pour le choix de la technologie du
+Plusieurs critères devrons être respectés pour le choix de la technologie du
 site.
 Il faut que les livres puissent disposer d'un nom, d'une description, d'une
 date de parution d'un auteur (ou groupe d'auteur), un éditeur et d'un prix.
 De plus la plateforme doit pouvoir donner la possibilité d'avoir des
-réductions pour les clients réguliés ainsi que des reductions ponctuelles sur
+réductions pour les clients réguliers ainsi que des réductions ponctuelles sur
 des produits cibles.
 
 Il faut pouvoir synchroniser le site de e-commerce avec un système de gestion
@@ -81,6 +105,23 @@ de stock et de facturation comme un ERP.
 
 Il faut pouvoir personnaliser l'interface avec un thème pour
 \textit{Delivrou}, et de plus, elle doit être simple et agréable.
+
+\newpage
+\section{Budget Prévisionnel}
+Développement initial……………………………………….....2100\euro  \\
+\hangindent=1.5cm coût de base.....................................................................................500\euro  \\
+design…………………………………………...………500\euro  \\
+fonctionnalités:...............................................................................1100\euro  \\
+
+Frais Récurrents (/mois)…………………………....…………..1800\euro  \\
+\hangindent=1.5cm Hébergement……………..........………………………….240\euro  \\
+Maintenance……………...…...………………………….1560\euro  \\
+
+Services Additionnels……………………….....……………….1000\euro  \\
+\hangindent=1.5cm    Création logo….....……………………………………….200\euro  \\
+    Accompagnement SEO……………………………...............800\euro  \\
+\\\\\\
+TOTAL………………………......................................……4900\euro \\
 
 \part{Backlog}
 \chapter{Backlog}
@@ -122,10 +163,10 @@ besoins du projet.
 \textit{Delivrou} est un site de vente de livres, il faut donc que le
 CMS permette de faire des sites e-commerces. Il faut aussi pouvoir
 gérer les stocks de livres. Étant donné que \textit{Delivrou} et une
-petite entreprise nous allons nous contentrer sur les CMS open source,
+petite entreprise nous allons nous concentrer sur les CMS open source,
 pour avoir si besoin l'aide de la communauté. Nous voulons aussi un
-CMS qui a une installation et une prise en main facile et rapide, nous
-avons en effet pas le temps d'apprendre à utiliser un CMS complexe
+CMS qui à une installation et une prise en main facile et rapide, nous
+n'avons en effet pas le temps d'apprendre à utiliser un CMS complexe
 dans le temps impartis pour l'exercice. Le CMS devra aussi pouvoir
 gérer plusieurs comptes de connexion.
 
@@ -208,31 +249,37 @@ les exigence du cahier des charges.
 \section{L'hébergement}
 Nous avons décidé d’héberger notre site car nous voulions pouvoir tous
 le modifier à distance. Mr Pierre-Antoine Rouby dispose d'un serveur
-sur lequel nous allons installer notre Prestashop. Nous devons donc
-mettre en place un serveur apache ainsi qu'un gestionnaire de bases de
-données tel que mysql ou mariaDB.
+sur lequel nous allons installer notre Prestashop de test. Nous devons
+donc mettre en place un virtual host apache ainsi qu'une base de données
+mariaDB. /br
+Pour le nom de domaine (delivrou.fr) nous pensons l'acheter sur ovh ou
+le .fr est à 5,49\euro.
 
 \section{L'installation de prestashop}
+Nous avons choisi d'installer prestashop sur un server apache mutualisé,
+les services de base sont donc déjà installer et configuré (Apache, php,
+mariadb).
+Dans un premier temps il faut créer un dossier système et y mettre les
+fichiers de prestashop, puis configurer le virtual host d'apache et faire
+pointer sur le dossier. Étant donnée que le site est un site de
+developpement et non de prod, nous avons choisi de passer par un DN (domain
+name) virtuel, il n'existe pas, il faut donc l'ajouter dans le fichier
+\texttt{hosts} du système pour pouvoir y accéder.
 
+Étape suivante est de se connecter au gestionnaire de base de donnée et créer
+un utilisateur pour prestashop, une base de donnée et adapter les permissions.
+
+Pour finir il faut accéder au site via le DN, puis un script d'installation
+permet de faire les premières configurations directement sur le navigateur
+web.
 
 \section{La configuration}
-Nous avons tous des comptes administrateur.
-Nous allons gêrer les droits, les formulaires et le contenue.
+Nous avons tous des comptes administrateurs.
+Nous allons gêrer les droits, les formulaires et le contenu.
 
-\newpage
-\section{Budget Prévisionnel}
-Développement initial……………………………………….....2100\euro  \\
-\hangindent=1.5cm coût de base.....................................................................................500\euro  \\
-design…………………………………………...………500\euro  \\
-fonctionnalités:...............................................................................1100\euro  \\
+\section{accessibilité au site}
+Vous pouvez rajouter dans votre fichier /etc/host la ligne : 5.196.74.209    dev.delivrou.fr,
+et lorsque vous taperez dev.delivrou.fr dans l'URL de votre moteur de recherche vous serez sur
+notre site. Ou sinon vous pouvez directement taper l'adresse IP dans l'URL.
 
-Frais Récurrents (/mois)…………………………....…………..1800\euro  \\
-\hangindent=1.5cm Hébergement……………..........………………………….240\euro  \\
-Maintenance……………...…...………………………….1560\euro  \\
-
-Services Additionnels……………………….....……………….1000\euro  \\
-\hangindent=1.5cm    Création logo….....……………………………………….200\euro  \\
-    Accompagnement SEO……………………………...............800\euro  \\
-\\\\\\
-TOTAL………………………......................................……4900\euro  \\
 \end{document}
