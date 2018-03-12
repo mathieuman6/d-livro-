@@ -82,6 +82,23 @@ de stock et de facturation comme un ERP.
 Il faut pouvoir personnaliser l'interface avec un thème pour
 \textit{Delivrou}, et de plus, elle doit être simple et agréable.
 
+\newpage
+\section{Budget Prévisionnel}
+Développement initial……………………………………….....2100\euro  \\
+\hangindent=1.5cm coût de base.....................................................................................500\euro  \\
+design…………………………………………...………500\euro  \\
+fonctionnalités:...............................................................................1100\euro  \\
+
+Frais Récurrents (/mois)…………………………....…………..1800\euro  \\
+\hangindent=1.5cm Hébergement……………..........………………………….240\euro  \\
+Maintenance……………...…...………………………….1560\euro  \\
+
+Services Additionnels……………………….....……………….1000\euro  \\
+\hangindent=1.5cm    Création logo….....……………………………………….200\euro  \\
+    Accompagnement SEO……………………………...............800\euro  \\
+\\\\\\
+TOTAL………………………......................................……4900\euro \\
+
 \part{Backlog}
 \chapter{Backlog}
 \begin{itemize}
@@ -208,31 +225,30 @@ les exigence du cahier des charges.
 \section{L'hébergement}
 Nous avons décidé d’héberger notre site car nous voulions pouvoir tous
 le modifier à distance. Mr Pierre-Antoine Rouby dispose d'un serveur
-sur lequel nous allons installer notre Prestashop. Nous devons donc
-mettre en place un serveur apache ainsi qu'un gestionnaire de bases de
-données tel que mysql ou mariaDB.
+sur lequel nous allons installer notre Prestashop de test. Nous devons
+donc mettre en place un virtual host apache ainsi qu'une base de données
+mariaDB.
 
 \section{L'installation de prestashop}
+Nous avons choisi d'installer prestashop sur un server apache mutualisé,
+les services de base sont donc déjà installer et configuré (Apache, php,
+mariadb).
+Dans un premier temps il faut créer un dossier système et y mettre les
+fichiers de prestashop, puis configuré le virtual host d'apache et faire
+pointer sur le dossier. Étant donnée que le site est un site de
+developpement et non de prod, nous avons choisi de passer par un DN (domain
+name) virtuel, il n'existe pas, il faut donc l'ajouté dans le fichier
+\texttt{hosts} du système pour pouvoir y accédé.
 
+Étape suivante est de se connecter au gestionnaire de base de donnée et créer
+un utilisateur pour prestashop, une base de donnée et adapté les permitions.
+
+Pour finir il faut accédé au site via le DN, puis un script d'installation
+permet de faire les premières configurations directement sur le navigateur
+web.
 
 \section{La configuration}
 Nous avons tous des comptes administrateur.
 Nous allons gêrer les droits, les formulaires et le contenue.
 
-\newpage
-\section{Budget Prévisionnel}
-Développement initial……………………………………….....2100\euro  \\
-\hangindent=1.5cm coût de base.....................................................................................500\euro  \\
-design…………………………………………...………500\euro  \\
-fonctionnalités:...............................................................................1100\euro  \\
-
-Frais Récurrents (/mois)…………………………....…………..1800\euro  \\
-\hangindent=1.5cm Hébergement……………..........………………………….240\euro  \\
-Maintenance……………...…...………………………….1560\euro  \\
-
-Services Additionnels……………………….....……………….1000\euro  \\
-\hangindent=1.5cm    Création logo….....……………………………………….200\euro  \\
-    Accompagnement SEO……………………………...............800\euro  \\
-\\\\\\
-TOTAL………………………......................................……4900\euro  \\
 \end{document}
